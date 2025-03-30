@@ -2,6 +2,10 @@ name: Setup runtime + pnpm
 
 description: shared action to set up Node and pnpm
 
+on:
+  push:
+    branches: [beta, alpha, main]
+
 runs:
   using: composite
   steps:
