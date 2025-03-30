@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4.3.0
         with:
-          version: ${{ inputs.node_version }}
+          node_version: ${{ inputs.node_version }}
   
       - name: Get pnpm store directory
         shell: bash
