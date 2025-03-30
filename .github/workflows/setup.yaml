@@ -3,9 +3,10 @@ name: Setup runtime + pnpm
 on:
   workflow_call:
     inputs:
-      enable_build:
-        required: true
-        type: boolean
+      pnpm_version:
+        required: false
+        type: string
+        default: 10.7.0
     secrets:
         GITHUB_CI_TOKEN:
           required: true
