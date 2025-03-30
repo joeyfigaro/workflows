@@ -1,21 +1,23 @@
-name: Setup runtime + pnpm
+name: PNPM Setup
+description: Setup runtime and install dependencies
 
-on:
-  workflow_call:
-    inputs:
-      node_version:
-        required: false
-        type: string
-        default: lts
-      pnpm_version:
-        required: false
-        type: string
-        default: 10.7.0
-    secrets:
-        GITHUB_CI_TOKEN:
-          required: true
+# on:
+#   workflow_call:
+inputs:
+  node_version:
+    required: false
+    type: string
+    default: lts
+  pnpm_version:
+    required: false
+    type: string
+    default: 10.7.0
+secrets:
+    GITHUB_CI_TOKEN:
+      required: true
 
-runs: 'composite'
+runs:
+  using: 'composite'
   steps:
     - name: Setup pnpm
       uses: pnpm/action-setup@v4.1.0
