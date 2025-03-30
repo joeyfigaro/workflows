@@ -3,8 +3,7 @@ name: Setup runtime + pnpm
 description: shared action to set up Node and pnpm
 
 on:
-  push:
-    branches: [beta, alpha, main]
+  workflow_call
 
 runs:
   using: composite
