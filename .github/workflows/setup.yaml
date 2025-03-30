@@ -3,6 +3,10 @@ name: Setup runtime + pnpm
 on:
   workflow_call:
     inputs:
+      node_version:
+        required: false
+        type: string
+        default: lts
       pnpm_version:
         required: false
         type: string
