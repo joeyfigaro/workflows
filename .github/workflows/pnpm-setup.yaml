@@ -7,6 +7,10 @@ on:
         required: false
         type: string
         default: lts
+      run_tests:
+        required: false
+        type: boolean
+        default: false
       pnpm_version:
         required: false
         type: string
@@ -50,3 +54,7 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: pnpm install --frozen-lockfile
+
+      - name: Execute Tests
+        if: ${{ inputs.run_tests }} == 'true'
+        run: pnpm run test:ci
