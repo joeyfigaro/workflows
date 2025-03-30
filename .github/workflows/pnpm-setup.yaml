@@ -20,6 +20,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 0
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.1.0
         with:
